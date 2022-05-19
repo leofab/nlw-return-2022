@@ -1,6 +1,7 @@
 
 import express from 'express'
 import { routes } from './routes';
+import cors from 'cors'
 
 const app = express();
 
@@ -12,6 +13,7 @@ const app = express();
 //PATCH = Atualizar informações parcialmente
 //DELETE = Deletar informações
 
+app.use(cors())
 app.use(express.json());
 app.use(routes);
 
